@@ -12,7 +12,9 @@ const TicketItem = ({ ticket, dispatch }) => {
   const onDeleteHandler = () => {
     dispatch({ type: "DELETE_TICKET", payload: { id } });
   };
-  const onEditHandler = () => {};
+    const onEditHandler = () => {
+        dispatch({type: "SET_EDITING_TICKET", payload: ticket});
+  };
 
   return (
     <div className="ticket-item">
