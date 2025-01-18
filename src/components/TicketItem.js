@@ -9,11 +9,22 @@ const TicketItem = ({ ticket, dispatch }) => {
     3: "priority-high",
   };
 
+  const onDeleteHandler = () => {
+    dispatch({ type: "DELETE_TICKET", payload: { id } });
+  };
+  const onEditHandler = () => {};
+
   return (
     <div className="ticket-item">
       <div className={`priority-dot ${priorityClass[priority]}`}></div>
       <h3>{title}</h3>
       <p>{description}</p>
+      <button className="button" onClick={onDeleteHandler}>
+        Delete
+      </button>
+      <button className="button" onClick={onEditHandler}>
+        Edit
+      </button>
     </div>
   );
 };
