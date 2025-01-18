@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TicketForm = () => {
+const TicketForm = ({ dispatch }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("1");
@@ -19,15 +19,14 @@ const TicketForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Ticket submitted:", ticketData);
+    const ticketData = {
+      id: new Date().toISOString(),
+      title,
+      description,
+      priority,
+    };
+    dispatch({ type: "ADD_TICKET", payload: ticketData });
     clearForm();
-  };
-
-  const ticketData = {
-    id: new Date().toISOString(),
-    title,
-    description,
-    priority,
   };
 
   return (
