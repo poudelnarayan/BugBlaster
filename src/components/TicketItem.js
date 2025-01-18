@@ -5,8 +5,8 @@ const TicketItem = ({ ticket, dispatch }) => {
 
   const priorityClass = {
     1: "priority-low",
-    2: "priority-Medium",
-    3: "priority-High",
+    2: "priority-medium",
+    3: "priority-high",
   };
 
   return (
