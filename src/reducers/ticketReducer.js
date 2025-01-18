@@ -16,7 +16,7 @@ const ticketReducer = (state, action) => {
           ...state,
           tickets: state.tickets.filter(
             (ticket) => ticket.id !== action.payload.id
-            ),
+          ),
           editingTicket: null,
         };
       } else {
@@ -37,6 +37,11 @@ const ticketReducer = (state, action) => {
     case "CLEAR_EDITING_TICKET":
       return { ...state, editingTicket: null };
 
+    case "SET_SORTING":
+      return {
+        ...state,
+        sortPreference: action.payload,
+      };
     default:
       return state;
   }
