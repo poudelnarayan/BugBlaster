@@ -19,7 +19,15 @@ const TicketForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("Ticket submitted:", ticketData);
     clearForm();
+  };
+
+  const ticketData = {
+    id: new Date().toISOString(),
+    title,
+    description,
+    priority,
   };
 
   return (
